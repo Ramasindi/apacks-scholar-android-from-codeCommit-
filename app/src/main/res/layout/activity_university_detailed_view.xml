@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".UniversityDetailedView">
+
+    <ImageView
+        android:id="@+id/Detailed_logo"
+        android:paddingTop="16dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+       android:id="@+id/universityDetailed_name"
+        android:paddingTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Detailed_logo"
+        android:text="University Name"
+        android:textSize="24sp"
+        android:fontFamily="sans-serif-black"/>
+    <TextView
+        android:id="@+id/physicalAddress"
+        android:layout_below="@id/universityDetailed_name"
+        android:paddingTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Physical Address: N/A"
+        android:textSize="24sp"
+        android:fontFamily="sans-serif-black"/>
+
+    <TextView
+        android:id="@+id/faculty"
+        android:layout_below="@id/physicalAddress"
+        android:paddingTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Faculties: N/A"
+        android:textSize="24sp"
+        android:fontFamily="sans-serif-black"/>
+
+    <TextView
+        android:id="@+id/nationalRanking"
+        android:paddingTop="20dp"
+        android:layout_below="@id/faculty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="National Ranking: N/A"
+        android:textSize="24sp"
+        android:fontFamily="sans-serif-black" />
+    <TextView
+        android:paddingTop="20dp"
+        android:layout_below="@id/nationalRanking"
+        android:id="@+id/province"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Province: N/A"
+        android:textSize="24sp"
+        android:fontFamily="sans-serif-black"/>
+    <TextView
+        android:paddingTop="20dp"
+        android:layout_below="@id/province"
+        android:id="@+id/detaildeWebsite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="www.university.co.za"
+        android:textSize="24sp"
+        android:fontFamily="sans-serif-black"/>
+</RelativeLayout>
