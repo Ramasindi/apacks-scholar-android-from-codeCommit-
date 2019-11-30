@@ -1,4 +1,4 @@
-package com.apacksscholar.core;
+package com.apacksscholar.android;
 
 public class University {
 

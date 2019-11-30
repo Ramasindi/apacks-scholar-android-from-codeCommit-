@@ -1,4 +1,4 @@
-package com.apacksscholar.core;
+package com.apacksscholar.android;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
