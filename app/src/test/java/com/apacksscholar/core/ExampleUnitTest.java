@@ -1,4 +1,4 @@
-package com.example.apexscholar;
+package com.apacksscholar.core;
 
 import org.junit.Test;
 

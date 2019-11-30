@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.apexscholar">
+    package="com.apacksscholar.core">
 
     <application
         android:allowBackup="true"
@@ -9,13 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UniversityDetailedView">
+        <activity android:name=".core.UniversityDetailedView">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.apexscholar.MainActivity"/>
+                android:value=".core.MainActivity"/>
         </activity>
-        <activity android:name=".University" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".core.University" />
+        <activity android:name=".core.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
