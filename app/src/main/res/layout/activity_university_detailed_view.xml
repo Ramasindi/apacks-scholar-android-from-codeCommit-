@@ -17,14 +17,14 @@
         />
 
     <TextView
-       android:id="@+id/universityDetailed_name"
+        android:id="@+id/universityDetailed_name"
         android:paddingTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/Detailed_logo"
         android:text="University Name"
         android:textSize="24sp"
-        android:fontFamily="sans-serif-black"/>
+        android:fontFamily="sans-serif-condensed"/>
     <TextView
         android:id="@+id/physicalAddress"
         android:layout_below="@id/universityDetailed_name"
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:text="Physical Address: N/A"
         android:textSize="24sp"
-        android:fontFamily="sans-serif-black"/>
+        android:fontFamily="sans-serif-condensed"/>
 
     <TextView
         android:id="@+id/faculty"
@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:text="Faculties: N/A"
         android:textSize="24sp"
-        android:fontFamily="sans-serif-black"/>
+        android:fontFamily="sans-serif-condensed"/>
 
     <TextView
         android:id="@+id/nationalRanking"
@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:text="National Ranking: N/A"
         android:textSize="24sp"
-        android:fontFamily="sans-serif-black" />
+        android:fontFamily="sans-serif-condensed" />
     <TextView
         android:paddingTop="20dp"
         android:layout_below="@id/nationalRanking"
@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:text="Province: N/A"
         android:textSize="24sp"
-        android:fontFamily="sans-serif-black"/>
+        android:fontFamily="sans-serif-condensed"/>
     <TextView
         android:paddingTop="20dp"
         android:layout_below="@id/province"
@@ -71,5 +71,5 @@
         android:layout_height="wrap_content"
         android:text="www.university.co.za"
         android:textSize="24sp"
-        android:fontFamily="sans-serif-black"/>
+        android:fontFamily="sans-serif-condensed"/>
 </RelativeLayout>
