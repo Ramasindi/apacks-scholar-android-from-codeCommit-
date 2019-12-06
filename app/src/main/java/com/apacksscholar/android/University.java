@@ -12,6 +12,9 @@ public class University {
      mUniversityLogoId = universityLogoId;
     }
 
+    public University() {
+    }
+
     public  String getUniversityName(){
         return mUniversityName;
     }
