@@ -2,49 +2,114 @@ package com.apacksscholar.android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.LoaderManager;
+import android.content.Context;
 import android.content.Intent;
+import android.content.Loader;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<University>> {
+
+    private static final String APACKS_REQUEST_URL = "https://7n23t5hjz0.execute-api.eu-west-1.amazonaws.com/Prod/list/x-api-key=4ypcmvmBYk2siQMkjcGB0aLXRLFTisexaeW9fTSL";
+
+    private TextView mEmptyStateTextView;
+
+
+    private static final int UNIVERSITY_LOADER_ID = 1;
+
+    private UniversityAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final ArrayList<University> universities = new ArrayList<>();
-
-        universities.add(new University("University of Johannesburg","www.uj.ac.za",R.mipmap.ic_launcher));
-        universities.add(new University("University of Pretoria","www.up.ac.za",R.mipmap.ic_launcher));
-        universities.add(new University("Vaal University of Technology","www.vut.ac.za",R.mipmap.ic_launcher));
-        universities.add(new University("University of Free State","www.ufs.ac.za",R.mipmap.ic_launcher));
-        universities.add(new University("University of Witswaterand","www.wits.ac.za",R.mipmap.ic_launcher));
-        universities.add(new University("Tshwane University of Technology","www.tut.ac.za",R.mipmap.ic_launcher));
-        universities.add(new University("University of CapeTown","www.uct.ac.za",R.mipmap.ic_launcher));
-
-        UniversityAdapter adapter = new UniversityAdapter(this,universities);
 
         ListView listView = findViewById(R.id.list);
 
-        listView.setAdapter(adapter);
+        mAdapter = new UniversityAdapter(this, new ArrayList<University>());
+
+
+        listView.setAdapter(mAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+               University currentUniversity = mAdapter.getItem(position);
 
-                University university = universities.get(position);
                 Intent intent = new Intent(MainActivity.this, UniversityDetailedView.class);
-                intent.putExtra("University Name", university.getUniversityName());
-                intent.putExtra("Website", university.getUniversityWebsite());
-                intent.putExtra("LOGO", university.getUniversityLogoId());
+                intent.putExtra("University Name", currentUniversity.getUniversityName());
+                intent.putExtra("PhysicalAddress", currentUniversity.getPhysicalAdress());
+                intent.putExtra("NationalRanking", currentUniversity.getNationalRanking());
+                intent.putExtra("Province", currentUniversity.getProvince());
+                intent.putExtra("Website", currentUniversity.getUniversityWebsite());
+                intent.putExtra("InternationalRanking", currentUniversity.getInternationalRanking());
+                intent.putExtra("LatLong", currentUniversity.getLatLong());
                 startActivity(intent);
-            }
-        });
+
+
 
     }
+});
+
+        ConnectivityManager connMgr = (ConnectivityManager)
+                getSystemService(Context.CONNECTIVITY_SERVICE);
+
+
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+
+        if (networkInfo != null && networkInfo.isConnected()) {
+
+            LoaderManager loaderManager = getLoaderManager();
+
+
+            loaderManager.initLoader(UNIVERSITY_LOADER_ID, null, this);
+        }else {
+
+            View loadingIndicator = findViewById(R.id.loading_spinner);
+            loadingIndicator.setVisibility(View.GONE);
+
+
+            mEmptyStateTextView = findViewById(R.id.empty1_view);
+            mEmptyStateTextView.setText(R.string.no_internet_connection);
+        }
+    }
+
+    @Override
+    public Loader<List<University>> onCreateLoader(int id, Bundle args) {
+        return new UniversityLoader(this, APACKS_REQUEST_URL);
+    }
+
+    @Override
+    public void onLoadFinished(Loader<List<University>> loader, List<University> data) {
+        ProgressBar progressBar = findViewById(R.id.loading_spinner);
+        progressBar.setVisibility(View.GONE);
+
+        mEmptyStateTextView = findViewById(R.id.empty1_view);
+
+        if (data != null && !data.isEmpty()) {
+            mAdapter.addAll(data);
+        } else {
+
+            mEmptyStateTextView.setText(R.string.no_universities);
+        }
+    }
+
+    @Override
+    public void onLoaderReset(Loader<List<University>> loader) {
+        mAdapter.clear();
+    }
+
+
 }

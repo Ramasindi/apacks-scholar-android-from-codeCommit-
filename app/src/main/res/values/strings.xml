@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">Apex Scholar</string>
+    <string name="app_name">Apacks Scholar</string>
+    <string name="no_universities">No Universities found.</string>
+    <string name="no_internet_connection">No internet connection.</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="facebook_app_id">508466366429649</string>
+    <string name="fb_login_protocol_scheme">fb508466366429649</string>
+
 </resources>

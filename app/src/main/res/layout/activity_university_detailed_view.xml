@@ -1,75 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".UniversityDetailedView">
+    android:layout_height="match_parent" >
 
-    <ImageView
-        android:id="@+id/Detailed_logo"
-        android:paddingTop="16dp"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@mipmap/ic_launcher"
-        android:layout_centerHorizontal="true"
-        />
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+android:layout_height="match_parent"
+android:layout_width="match_parent"
+android:padding="16dp"
+tools:context=".UniversityDetailedView">
 
-    <TextView
-        android:id="@+id/universityDetailed_name"
-        android:paddingTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/Detailed_logo"
-        android:text="University Name"
-        android:textSize="24sp"
-        android:fontFamily="sans-serif-condensed"/>
-    <TextView
-        android:id="@+id/physicalAddress"
-        android:layout_below="@id/universityDetailed_name"
-        android:paddingTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Physical Address: N/A"
-        android:textSize="24sp"
-        android:fontFamily="sans-serif-condensed"/>
+<ImageView
+    android:id="@+id/Detailed_logo"
+    android:layout_centerHorizontal="true"
+    android:layout_height="100dp"
+    android:layout_width="100dp"
+    android:paddingTop="16dp"
+    android:src="@mipmap/apacks_logo" />
 
-    <TextView
-        android:id="@+id/faculty"
-        android:layout_below="@id/physicalAddress"
-        android:paddingTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Faculties: N/A"
-        android:textSize="24sp"
-        android:fontFamily="sans-serif-condensed"/>
+<TextView
+    android:fontFamily="@font/yeseva_one"
+    android:id="@+id/universityDetailed_name"
+    android:layout_below="@id/Detailed_logo"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:paddingTop="20dp"
+    android:text="University Name"
+    android:textSize="24sp" />
 
-    <TextView
-        android:id="@+id/nationalRanking"
-        android:paddingTop="20dp"
-        android:layout_below="@id/faculty"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="National Ranking: N/A"
-        android:textSize="24sp"
-        android:fontFamily="sans-serif-condensed" />
-    <TextView
-        android:paddingTop="20dp"
-        android:layout_below="@id/nationalRanking"
-        android:id="@+id/province"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Province: N/A"
-        android:textSize="24sp"
-        android:fontFamily="sans-serif-condensed"/>
-    <TextView
-        android:paddingTop="20dp"
-        android:layout_below="@id/province"
-        android:id="@+id/detaildeWebsite"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="www.university.co.za"
-        android:textSize="24sp"
-        android:fontFamily="sans-serif-condensed"/>
+<TextView
+    android:fontFamily="@font/yeseva_one"
+    android:id="@+id/physicalAddress"
+    android:layout_below="@id/universityDetailed_name"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:paddingTop="20dp"
+    android:text="Physical Address: N/A"
+    android:textSize="20sp" />
+
+<TextView
+
+    android:fontFamily="@font/yeseva_one"
+    android:id="@+id/faculty"
+    android:layout_below="@id/physicalAddress"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:paddingTop="20dp"
+    android:text="Faculties: N/A"
+    android:textSize="20sp" />
+
+<TextView
+    android:fontFamily="@font/yeseva_one"
+    android:id="@+id/nationalRanking"
+    android:layout_below="@id/faculty"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:paddingTop="20dp"
+    android:text="National Ranking: N/A"
+    android:textSize="20sp" />
+
+<TextView
+    android:fontFamily="@font/yeseva_one"
+    android:id="@+id/province"
+    android:layout_below="@id/nationalRanking"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:paddingTop="20dp"
+    android:text="Province: N/A"
+    android:textSize="20sp" />
+
+<TextView
+    android:fontFamily="@font/yeseva_one"
+    android:id="@+id/detaildeWebsite"
+    android:layout_below="@id/province"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:paddingTop="20dp"
+    android:text="www.university.co.za"
+    android:textSize="20sp" />
+
+<TextView
+    android:fontFamily="@font/yeseva_one"
+    android:id="@+id/international_ranking"
+    android:layout_below="@id/detaildeWebsite"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:paddingTop="20dp"
+    android:text="Interantional ranking"
+    android:textSize="20sp" />
+
+<TextView
+    android:fontFamily="@font/yeseva_one"
+    android:id="@+id/lat_long"
+    android:layout_below="@id/international_ranking"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:paddingTop="20dp"
+    android:text="latitude,longitute"
+    android:textSize="20sp"  />
 </RelativeLayout>
+    </ScrollView>
