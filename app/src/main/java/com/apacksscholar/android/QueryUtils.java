@@ -20,6 +20,8 @@ import java.util.List;
 
 public class QueryUtils {
     private static final String LOG_TAG = QueryUtils.class.getSimpleName();
+    private static final String API_KEY_HEADER = "x-api-key";
+    private static final String API_KEY = "4ypcmvmBYk2siQMkjcGB0aLXRLFTisexaeW9fTSL";
 
     private QueryUtils(){
     }
@@ -37,6 +39,7 @@ public class QueryUtils {
             urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setReadTimeout(10000 /* milliseconds */);
             urlConnection.setConnectTimeout(15000 /* milliseconds */);
+            urlConnection.addRequestProperty(API_KEY_HEADER, API_KEY);
             urlConnection.setRequestMethod("GET");
             urlConnection.connect();
             if (urlConnection.getResponseCode() == 200) {
@@ -46,7 +49,7 @@ public class QueryUtils {
                 Log.e(LOG_TAG, "Error response code: " + urlConnection.getResponseCode());
             }
         } catch (IOException e) {
-            Log.e(LOG_TAG, "Problem retrieving the earthquake JSON results.", e);
+            Log.e(LOG_TAG, "Problem retrieving the e JSON results.", e);
 
         } finally {
             if (urlConnection != null) {

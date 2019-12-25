@@ -10,18 +10,16 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<University>> {
 
-    private static final String APACKS_REQUEST_URL = "https://7n23t5hjz0.execute-api.eu-west-1.amazonaws.com/Prod/list/x-api-key=4ypcmvmBYk2siQMkjcGB0aLXRLFTisexaeW9fTSL";
+    private static final String APACKS_REQUEST_URL = "https://7n23t5hjz0.execute-api.eu-west-1.amazonaws.com/Prod/list/";
 
     private TextView mEmptyStateTextView;
 
@@ -30,10 +28,35 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     private UniversityAdapter mAdapter;
 
+
+
+   // ApiClientFactory factory;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // factory = new ApiClientFactory().apiKey("4ypcmvmBYk2siQMkjcGB0aLXRLFTisexaeW9fTSL");
+
+
+
+
+
+
+
+//        AWSCredentialsProvider credentialsProvider = new CognitoCachingCredentialsProvider(
+//                this,          // activity context
+//                "identityPoolId", // Cognito identity pool id
+//                Regions.US_EAST_1 // region of Cognito identity pool
+//        );
+//
+//         factory = new ApiClientFactory()
+//                .credentialsProvider(credentialsProvider);
+
+
+
+
+
 
 
         ListView listView = findViewById(R.id.list);

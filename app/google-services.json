@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "312391889538",
+    "firebase_url": "https://apex-scholar.firebaseio.com",
+    "project_id": "apex-scholar",
+    "storage_bucket": "apex-scholar.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312391889538:android:9e4a479c1a8c3375c2ba9b",
+        "android_client_info": {
+          "package_name": "com.apacksscholar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "312391889538-rk2k8pmrv2t8m1lavhg2d0r4dqdri1jh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.apacksscholar",
+            "certificate_hash": "0794e1b76c1e3957155bccabc8cf9cc5b4db0616"
+          }
+        },
+        {
+          "client_id": "312391889538-7bua9u17ruv3j6gh5b05lmplkcjvjiu5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0pV4ARHvHedTfKTlYvYZxz31hFx2fTNU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "312391889538-7bua9u17ruv3j6gh5b05lmplkcjvjiu5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

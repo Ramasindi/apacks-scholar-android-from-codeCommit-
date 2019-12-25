@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.net.URLEncoder;
+
 public class UniversityDetailedView extends AppCompatActivity {
 
     @Override
@@ -61,9 +63,18 @@ public class UniversityDetailedView extends AppCompatActivity {
         latLong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent locationIntent = new Intent(Intent.ACTION_VIEW);
-                locationIntent.setData(Uri.parse("https://www.google.com/search?q=" + mLatLong));
-                startActivity(locationIntent);
+//                Intent locationIntent = new Intent(Intent.ACTION_VIEW);
+//                locationIntent.setData(Uri.parse("https://www.google.com/search?q=" + mLatLong));
+//                startActivity(locationIntent);
+
+                //String url = "";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse("geo:" + mLatLong));
+
+
+
+                startActivity(i);
+
             }
         });
 

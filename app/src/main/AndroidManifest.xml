@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ApacksLogin"
-            android:label="Login to Apacks Scholar">
+            android:label="Apacks Scholar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,7 +34,7 @@
             android:parentActivityName=".ApacksLogin">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ApacksLogin" />
+                android:value=".MainActivity" />
         </activity>
         <activity android:name=".University" />
         <meta-data android:name="com.facebook.sdk.ApplicationId"
