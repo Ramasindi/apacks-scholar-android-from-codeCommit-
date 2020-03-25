@@ -40,8 +40,8 @@ public List<University> loadInBackground() {
         return null;
         }
 
-        // Perform the network request, parse the response, and extract a list of earthquakes.
-        List<University> earthquakes = QueryUtils.fetchUniversityData(mUrl);
-        return earthquakes;
+        // Perform the network request, parse the response, and extract a list of universities.
+        List<University> universities = QueryUtils.fetchUniversityData(mUrl);
+        return universities;
         }
 }

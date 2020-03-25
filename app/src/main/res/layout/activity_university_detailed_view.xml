@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
-android:layout_height="match_parent"
+<RelativeLayout
+    android:layout_height="match_parent"
 android:layout_width="match_parent"
 android:padding="16dp"
 tools:context=".UniversityDetailedView">
@@ -18,16 +19,17 @@ tools:context=".UniversityDetailedView">
     android:paddingTop="16dp"
     android:src="@mipmap/apacks_logo" />
 
-<TextView
-    android:fontFamily="@font/yeseva_one"
-    android:id="@+id/universityDetailed_name"
-    android:layout_below="@id/Detailed_logo"
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent"
-    android:paddingTop="20dp"
-    android:textColor="#000000"
-    android:text="University Name"
-    android:textSize="24sp" />
+    <TextView
+        android:id="@+id/universityDetailed_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Detailed_logo"
+        android:fontFamily="@font/yeseva_one"
+        android:paddingTop="20dp"
+        android:text="University Name"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:fontFamily="monospace" />
 
 <TextView
     android:fontFamily="@font/yeseva_one"
@@ -38,30 +40,20 @@ tools:context=".UniversityDetailedView">
     android:paddingTop="20dp"
     android:textColor="#000000"
     android:text="Physical Address: N/A"
-    android:textSize="20sp" />
+    android:textSize="20sp"
+    app:fontFamily="monospace"/>
 
 <TextView
-
     android:fontFamily="@font/yeseva_one"
-    android:id="@+id/faculty"
+    android:id="@+id/nationalRanking"
     android:layout_below="@id/physicalAddress"
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
     android:paddingTop="20dp"
     android:textColor="#000000"
-    android:text="Faculties: N/A"
-    android:textSize="20sp" />
-
-<TextView
-    android:fontFamily="@font/yeseva_one"
-    android:id="@+id/nationalRanking"
-    android:layout_below="@id/faculty"
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent"
-    android:paddingTop="20dp"
-    android:textColor="#000000"
     android:text="National Ranking: N/A"
-    android:textSize="20sp" />
+    android:textSize="20sp"
+    app:fontFamily="monospace"/>
 
 <TextView
     android:fontFamily="@font/yeseva_one"
@@ -72,7 +64,8 @@ tools:context=".UniversityDetailedView">
     android:paddingTop="20dp"
     android:textColor="#000000"
     android:text="Province: N/A"
-    android:textSize="20sp" />
+    android:textSize="20sp"
+    app:fontFamily="monospace"/>
 
 <TextView
     android:fontFamily="@font/yeseva_one"
@@ -83,7 +76,8 @@ tools:context=".UniversityDetailedView">
     android:paddingTop="20dp"
     android:textColor="@color/design_default_color_primary"
     android:text="www.university.co.za"
-    android:textSize="20sp" />
+    android:textSize="20sp"
+    app:fontFamily="monospace"/>
 
 <TextView
     android:fontFamily="@font/yeseva_one"
@@ -94,7 +88,8 @@ tools:context=".UniversityDetailedView">
     android:paddingTop="20dp"
     android:textColor="#000000"
     android:text="Interantional ranking"
-    android:textSize="20sp" />
+    android:textSize="20sp"
+    app:fontFamily="monospace"/>
 
 <TextView
     android:fontFamily="@font/yeseva_one"
@@ -105,6 +100,19 @@ tools:context=".UniversityDetailedView">
     android:paddingTop="20dp"
     android:textColor="@color/design_default_color_primary"
     android:text="latitude,longitute"
-    android:textSize="20sp"  />
+    android:textSize="20sp"
+    app:fontFamily="monospace"/>
+    <Button
+        android:fontFamily="@font/yeseva_one"
+        android:id="@+id/qualifications"
+        android:layout_below="@id/lat_long"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:paddingTop="20dp"
+        android:textColor="#000000"
+        android:text="Qualifications"
+        android:textSize="20sp"
+        app:fontFamily="monospace"
+        android:onClick="qualifications"/>
 </RelativeLayout>
     </ScrollView>

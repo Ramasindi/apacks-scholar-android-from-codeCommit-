@@ -3,9 +3,13 @@ package com.apacksscholar.android;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.net.URLEncoder;
@@ -18,6 +22,8 @@ public class UniversityDetailedView extends AppCompatActivity {
         setContentView(R.layout.activity_university_detailed_view);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        ImageView universityLogo = findViewById(R.id.Detailed_logo);
 
         TextView universityNameText = findViewById(R.id.universityDetailed_name);
 
@@ -47,8 +53,10 @@ public class UniversityDetailedView extends AppCompatActivity {
         final String mLatLong = intent.getStringExtra("LatLong");
         String mPhysicalAddress = intent.getStringExtra("PhysicalAddress");
         //final String universityWebsite = intent.getStringExtra("Website");
-        //String universityLogoId = intent.getStringExtra("LOGO");
+        byte[] universityLogoId = intent.getByteArrayExtra("UniversityLogo");
+        Bitmap bitmap = BitmapFactory.decodeByteArray(universityLogoId,0,universityLogoId.length);
 
+        universityLogo.setImageBitmap(bitmap);
 
         universityNameText.setText(universityName);
         nationalRanking.setText("National Ranking: " + mNationalRanking);
@@ -93,6 +101,12 @@ public class UniversityDetailedView extends AppCompatActivity {
         });
 
 
+
+
+    }
+    public void qualifications(View view){
+        Intent intent = new Intent(UniversityDetailedView.this, UniversityQualification.class);
+        startActivity(intent);
     }
 
 //    @Override
@@ -102,4 +116,7 @@ public class UniversityDetailedView extends AppCompatActivity {
 //        startActivity(new Intent(UniversityDetailedView.this, MainActivity.class));
 //
 //    }
+
+
+
 }

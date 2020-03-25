@@ -1,6 +1,7 @@
 package com.apacksscholar.android;
 
 import android.app.Activity;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,14 +11,8 @@ import android.widget.TextView;
 
 
 import java.util.ArrayList;
-
-import static com.apacksscholar.android.R.id.international_ranking;
-import static com.apacksscholar.android.R.id.lat_long;
-import static com.apacksscholar.android.R.id.nationalRanking;
-import static com.apacksscholar.android.R.id.physicalAddress;
-import static com.apacksscholar.android.R.id.province;
-
 public class UniversityAdapter extends ArrayAdapter<University> {
+
 
     public UniversityAdapter(Activity context, ArrayList<University> universities){
         super(context,0,universities);
@@ -64,8 +59,10 @@ public class UniversityAdapter extends ArrayAdapter<University> {
 
 
 
-//        ImageView universityLogo = listItemView.findViewById(R.id.universityLogo);
-//        universityLogo.setImageResource(currentUniversity.getUniversityLogoId());
+       ImageView universityLogo = listItemView.findViewById(R.id.universityLogo);
+        universityLogo.setImageBitmap(currentUniversity.getUniversityLogoId());
+
+       //universityLogo.setImageURI(u);
 
         return listItemView;
     }

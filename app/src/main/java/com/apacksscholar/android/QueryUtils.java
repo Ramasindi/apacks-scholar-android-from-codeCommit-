@@ -1,5 +1,8 @@
 package com.apacksscholar.android;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -139,11 +142,37 @@ public class QueryUtils {
                 String mProvince = currentUniversity.getString("province");
                 String mLatLong = currentUniversity.getString("lat_long");
                 String mPhysicalAddress = currentUniversity.getString("physical_address");
-                //int mUniversityLogo = currentUniversity.getInt("logo_link");
+                String mUniversityLogo = currentUniversity.getString("logo_link");
                 //int mInstitutionId  = currentUniversity.getInt("institution_id");
                 //int mPhotosLink = currentUniversity.getInt("photos_link");
 
-                University university = new University(mUniversityName, mUniversityWebsite, 1
+                /////////////////////////////////////////////////////////////////////////////////////
+                URL imageURL = null;
+                Bitmap bitmap = null;
+
+                try {
+                    imageURL = new URL(mUniversityLogo);
+                }
+                catch (MalformedURLException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    HttpURLConnection connection = (HttpURLConnection) imageURL
+                            .openConnection();
+                    connection.setDoInput(true);
+                    connection.connect();
+                    InputStream inputStream = connection.getInputStream();
+                    bitmap = BitmapFactory.decodeStream(inputStream);
+                } catch (IOException e){
+                    e.printStackTrace();
+                }
+
+
+
+
+                /////////////////////////////////////////////////////////////////////////////////////
+
+                University university = new University(mUniversityName, mUniversityWebsite, bitmap
                         , mNationalRanking, mInternationalRanking,mProvince,mPhysicalAddress,mLatLong
                         ,1,1);
 
@@ -153,11 +182,33 @@ public class QueryUtils {
 
         } catch (JSONException e) {
 
-            Log.e("QueryUtils", "Problem parsing the earthquake JSON results", e);
+            Log.e("QueryUtils", "Problem parsing JSON results", e);
         }
 
 
         return universities;
     }
-
+//    public Bitmap loadImage(String ut12){
+//        Log.v("ut12--", ut12);
+//        URL imageURL = null;
+//        Bitmap bitmap = null;
+//
+//        try {
+//            imageURL = new URL(ut12);
+//        }
+//        catch (MalformedURLException e) {
+//            e.printStackTrace();
+//        }
+//        try {
+//            HttpURLConnection connection = (HttpURLConnection) imageURL
+//                    .openConnection();
+//            connection.setDoInput(true);
+//            connection.connect();
+//            InputStream inputStream = connection.getInputStream();
+//            bitmap = BitmapFactory.decodeStream(inputStream);
+//        } catch (IOException e){
+//         e.printStackTrace();
+//        }
+//        return  bitmap;
+//    }
     }

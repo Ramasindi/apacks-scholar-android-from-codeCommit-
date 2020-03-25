@@ -1,11 +1,5 @@
-version: 0.2
+a0277258-8045-45a0-b21f-86b8574e0857
 
-phases:
-  build:
-    commands:
-      - chmod +x ./gradlew
-      - ./gradlew assembleDebug
-artifacts:
-  files:
-     - './android/app/build/outputs/**/*.apk'
-  discard-paths: yes
+
+key
+http://content.guardianapis.com/search?tag=environment/recycling/plasticbags&api-key=a0277258-8045-45a0-b21f-86b8574e0857

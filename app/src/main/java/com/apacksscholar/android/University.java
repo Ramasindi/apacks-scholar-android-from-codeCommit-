@@ -1,10 +1,20 @@
 package com.apacksscholar.android;
 
-public class University {
+import android.graphics.Bitmap;
+import android.media.Image;
+import android.net.Uri;
+import android.util.Log;
 
+import com.google.zxing.client.result.URIParsedResult;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+public class University {
+    private static final String LOG_TAG = QueryUtils.class.getSimpleName();
     private String mUniversityName;
     private String mUniversityWebsite;
-    private int mUniversityLogoId;
+    private Bitmap mUniversityLogoId;
     private String mNationalRanking;
     private String mInternationalRanking;
     private String mProvince;
@@ -13,9 +23,9 @@ public class University {
     private int mInstitutionId;
     private int mPhotosLink;
 
-    public University(String universityName, String universityWebsite,int universityLogoId,
-                      String nationalRanking,String internationalRanking, String province,
-                      String physicalAddress, String latLong,int institutionId, int photoLink){
+    public University(String universityName, String universityWebsite, Bitmap universityLogoId,
+                      String nationalRanking, String internationalRanking, String province,
+                      String physicalAddress, String latLong, int institutionId, int photoLink){
      mUniversityName = universityName;
      mUniversityWebsite = universityWebsite;
      mUniversityLogoId = universityLogoId;
@@ -31,6 +41,7 @@ public class University {
     public University() {
     }
 
+
     public  String getUniversityName(){
         return mUniversityName;
     }
@@ -38,7 +49,8 @@ public class University {
     public  String getUniversityWebsite(){
         return mUniversityWebsite;
     }
-    public int getUniversityLogoId(){
+    public  Bitmap getUniversityLogoId(){
+
         return mUniversityLogoId;
     }
     public String getNationalRanking(){return mNationalRanking;}
